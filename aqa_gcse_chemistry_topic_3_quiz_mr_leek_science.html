@@ -1,0 +1,2726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Leek Science — AQA GCSE Chemistry Topic 3: Quantitative Chemistry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ==========================================================================
+       MR LEEK SCIENCE — CRIMSON / RUBY RED DESIGN TOKENS (TOPIC 3)
+       ========================================================================== */
+    :root {
+      --crimson-950: #1f070a;
+      --crimson-900: #450a0a;
+      --crimson-800: #7f1d1d;
+      --ruby-700: #991b1b;
+      --ruby-600: #b91c1c;
+      --ruby-500: #dc2626;
+      --ruby-400: #ef4444;
+
+      --rose-200: #fecaca;
+      --rose-100: #fee2e2;
+      --rose-50: #fef2f2;
+      --rose-tint: #fffafa;
+
+      --bg-page: #f4f6f9;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+
+      --blue-100: #e0f2fe;
+      --blue-700: #0369a1;
+      --purple-100: #f3e8ff;
+      --purple-700: #7e22ce;
+
+      --emerald-700: #047857;
+      --emerald-600: #059669;
+      --emerald-100: #d1fae5;
+      --emerald-50: #ecfdf5;
+
+      --amber-700: #b45309;
+      --amber-600: #d97706;
+      --amber-100: #fef3c7;
+      --amber-50: #fffbeb;
+
+      --shadow-shell: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+      --shadow-cta: 0 6px 18px -2px rgba(185, 28, 28, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--slate-900);
+      min-height: 100vh;
+      padding: 1.5rem 1rem 3rem;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .heading-font {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* ==========================================================================
+       CENTERED MAIN CARD CONTAINER
+       ========================================================================== */
+    .app-container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-shell);
+      overflow: hidden;
+    }
+
+    /* ==========================================================================
+       TOP CRIMSON BANNER HEADER
+       ========================================================================== */
+    .banner-header {
+      background: linear-gradient(135deg, #1f070a 0%, #450a0a 55%, #7f1d1d 100%);
+      padding: 32px 36px;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .banner-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .spec-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--rose-200);
+    }
+
+    .brand-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .banner-title {
+      font-size: clamp(1.5rem, 3vw, 1.98rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: -0.015em;
+      margin-bottom: 8px;
+    }
+
+    .banner-subtitle {
+      font-size: 0.94rem;
+      color: var(--slate-200);
+      max-width: 780px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* ==========================================================================
+       WHITE FORM BODY
+       ========================================================================== */
+    .card-body {
+      padding: 28px 36px 36px;
+    }
+
+    .section-block {
+      margin-bottom: 26px;
+    }
+
+    /* Row 1: Student Name & Email Address */
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--slate-800);
+      margin-bottom: 8px;
+    }
+
+    .field-label .req-star {
+      color: var(--ruby-500);
+      margin-left: 2px;
+    }
+
+    .field-label .opt-muted {
+      color: var(--slate-400);
+      font-weight: 500;
+      margin-left: 3px;
+    }
+
+    .text-input {
+      width: 100%;
+      padding: 12px 15px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--slate-900);
+      background: #ffffff;
+      border: 1.5px solid var(--slate-300);
+      border-radius: 12px;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .text-input::placeholder {
+      color: var(--slate-400);
+    }
+
+    .text-input:focus {
+      outline: none;
+      border-color: var(--ruby-500);
+      box-shadow: 0 0 0 3.5px rgba(220, 38, 38, 0.14);
+    }
+
+    .text-input.input-error {
+      border-color: var(--ruby-500);
+      background-color: var(--rose-50);
+      animation: shakeInput 0.32s ease;
+    }
+
+    .error-hint {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ruby-600);
+      margin-top: 5px;
+    }
+
+    @keyframes shakeInput {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    /* Section Header Bar */
+    .section-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .selected-tier-pill {
+      background: var(--rose-50);
+      border: 1px solid var(--rose-200);
+      color: var(--ruby-600);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .avail-count-text {
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--slate-500);
+    }
+
+    /* Row 2: 3-Column Tier Selection Grid */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .tier-card {
+      background: #ffffff;
+      border: 2px solid var(--slate-200);
+      border-radius: 16px;
+      padding: 18px 18px 20px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .tier-card:hover {
+      border-color: var(--slate-300);
+      background: #fcfcfd;
+    }
+
+    .tier-card.selected {
+      border-color: var(--ruby-500);
+      background: var(--rose-tint);
+      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.08);
+    }
+
+    .tier-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .spec-chip {
+      font-size: 0.69rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .chip-blue {
+      background: var(--blue-100);
+      color: var(--blue-700);
+    }
+
+    .chip-rose {
+      background: var(--rose-100);
+      color: var(--ruby-600);
+    }
+
+    .chip-purple {
+      background: var(--purple-100);
+      color: var(--purple-700);
+    }
+
+    .radio-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--slate-300);
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.16s ease;
+      flex-shrink: 0;
+    }
+
+    .radio-circle svg {
+      width: 13px;
+      height: 13px;
+      stroke: var(--slate-300);
+      stroke-width: 2.8;
+      fill: none;
+    }
+
+    .tier-card.selected .radio-circle {
+      background: var(--ruby-500);
+      border-color: var(--ruby-500);
+    }
+
+    .tier-card.selected .radio-circle svg {
+      stroke: #ffffff;
+    }
+
+    .tier-card-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+    }
+
+    .tier-card-desc {
+      font-size: 0.83rem;
+      color: var(--slate-600);
+      line-height: 1.52;
+    }
+
+    /* Row 3: 2-Column Quiz Focus Grid */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .focus-card {
+      background: #ffffff;
+      border: 2px solid var(--slate-200);
+      border-radius: 16px;
+      padding: 16px 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      text-align: left;
+      transition: all 0.18s ease;
+    }
+
+    .focus-card:hover {
+      border-color: var(--slate-300);
+      background: #fcfcfd;
+    }
+
+    .focus-card.selected {
+      border-color: var(--ruby-500);
+      background: var(--rose-tint);
+      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.08);
+    }
+
+    .focus-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.18s ease;
+    }
+
+    .focus-icon-ruby {
+      background: var(--ruby-500);
+      color: #ffffff;
+    }
+
+    .focus-icon-amber {
+      background: var(--amber-100);
+      color: var(--amber-700);
+    }
+
+    .focus-card.selected .focus-icon-amber {
+      background: var(--ruby-500);
+      color: #ffffff;
+    }
+
+    .focus-content {
+      flex: 1;
+    }
+
+    .focus-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .focus-check {
+      color: var(--ruby-500);
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .focus-desc {
+      font-size: 0.82rem;
+      color: var(--slate-600);
+      line-height: 1.48;
+    }
+
+    /* Row 4: Number of Questions 5-Column Grid */
+    .count-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .count-btn {
+      background: #ffffff;
+      border: 1.5px solid var(--slate-200);
+      border-radius: 12px;
+      padding: 13px 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--slate-800);
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .count-btn:hover:not(.active) {
+      border-color: var(--slate-300);
+      background: var(--slate-50);
+    }
+
+    .count-btn.active {
+      background: var(--ruby-500);
+      border-color: var(--ruby-500);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.28);
+    }
+
+    /* Divider + Bottom Full-Width CTA */
+    .cta-divider {
+      border: none;
+      border-top: 1px solid var(--slate-200);
+      margin: 26px 0 22px;
+    }
+
+    .btn-start-cta {
+      width: 100%;
+      background: var(--ruby-600);
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      padding: 16px 24px;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: var(--shadow-cta);
+      transition: background 0.18s ease, transform 0.15s ease;
+    }
+
+    .btn-start-cta:hover {
+      background: var(--ruby-700);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       SCREEN 2: ACTIVE QUIZ INTERFACE
+       ========================================================================== */
+    .quiz-hud {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .hud-badges {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hud-pill-dark {
+      background: var(--crimson-800);
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .hud-pill-rose {
+      background: var(--rose-50);
+      color: var(--ruby-600);
+      border: 1px solid var(--rose-200);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .hud-pill-amber {
+      background: var(--amber-100);
+      color: var(--amber-700);
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .hud-stats {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hud-score-badge {
+      background: var(--emerald-50);
+      color: var(--emerald-700);
+      border: 1px solid #a7f3d0;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 11px;
+      border-radius: 999px;
+    }
+
+    .hud-q-counter {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--slate-700);
+    }
+
+    .hud-change-btn {
+      background: #ffffff;
+      color: var(--slate-700);
+      border: 1.5px solid var(--slate-300);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .hud-change-btn:hover {
+      border-color: var(--ruby-500);
+      color: var(--ruby-600);
+      background: var(--rose-tint);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: var(--slate-100);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--ruby-700), var(--ruby-500));
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .question-box {
+      background: var(--rose-tint);
+      border: 1.5px solid var(--rose-200);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin-bottom: 18px;
+    }
+
+    .q-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 8px;
+    }
+
+    .q-kicker {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ruby-600);
+    }
+
+    .kbd-tip {
+      font-size: 0.73rem;
+      color: var(--slate-400);
+      font-weight: 500;
+    }
+
+    .q-stem {
+      font-size: clamp(1.05rem, 2.1vw, 1.2rem);
+      font-weight: 700;
+      color: var(--slate-900);
+      line-height: 1.5;
+    }
+
+    .q-formula-box {
+      margin-top: 12px;
+      background: #ffffff;
+      border: 1px solid var(--rose-200);
+      border-left: 4px solid var(--ruby-500);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-family: "Plus Jakarta Sans", monospace;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--crimson-900);
+      line-height: 1.45;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 18px;
+    }
+
+    .opt-btn {
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 2px solid var(--slate-200);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-family: inherit;
+      font-size: 0.96rem;
+      font-weight: 500;
+      color: var(--slate-800);
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      transition: all 0.15s ease;
+    }
+
+    .opt-btn:hover:not(:disabled) {
+      border-color: var(--ruby-500);
+      background: var(--rose-tint);
+    }
+
+    .opt-btn:disabled {
+      cursor: default;
+    }
+
+    .opt-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--slate-100);
+      color: var(--slate-700);
+      font-size: 0.82rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .opt-btn.correct {
+      border-color: var(--emerald-600);
+      background: var(--emerald-50);
+      color: var(--slate-900);
+    }
+
+    .opt-btn.correct .opt-letter {
+      background: var(--emerald-600);
+      color: #ffffff;
+    }
+
+    .opt-btn.incorrect {
+      border-color: var(--ruby-500);
+      background: var(--rose-50);
+      color: var(--crimson-900);
+    }
+
+    .opt-btn.incorrect .opt-letter {
+      background: var(--ruby-500);
+      color: #ffffff;
+    }
+
+    .opt-btn.dimmed {
+      opacity: 0.55;
+    }
+
+    .feedback-panel {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      animation: fadeSlide 0.22s ease;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .feedback-panel.fb-pass {
+      background: var(--emerald-50);
+      border: 1px solid #a7f3d0;
+      border-left: 5px solid var(--emerald-600);
+    }
+
+    .feedback-panel.fb-fail {
+      background: var(--rose-50);
+      border: 1px solid var(--rose-200);
+      border-left: 5px solid var(--ruby-500);
+    }
+
+    .fb-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .fb-status {
+      font-weight: 800;
+      font-size: 0.98rem;
+    }
+
+    .fb-pass .fb-status { color: var(--emerald-700); }
+    .fb-fail .fb-status { color: var(--ruby-600); }
+
+    .fb-chip {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--slate-600);
+      border: 1px solid var(--slate-200);
+    }
+
+    .fb-text {
+      font-size: 0.91rem;
+      color: var(--slate-800);
+      line-height: 1.55;
+    }
+
+    .quiz-bottom-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 14px;
+      border-top: 1px solid var(--slate-200);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--slate-700);
+      border: 1.5px solid var(--slate-300);
+      border-radius: 12px;
+      padding: 11px 18px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--slate-50);
+      border-color: var(--slate-400);
+    }
+
+    .btn-primary-sm {
+      background: var(--ruby-600);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 22px;
+      font-family: inherit;
+      font-size: 0.94rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(185, 28, 28, 0.25);
+      transition: background 0.16s ease;
+    }
+
+    .btn-primary-sm:hover {
+      background: var(--ruby-700);
+    }
+
+    /* ==========================================================================
+       SCREEN 3: DIAGNOSTIC REPORT
+       ========================================================================== */
+    .report-hero-box {
+      background: var(--rose-tint);
+      border: 1.5px solid var(--rose-200);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .report-student-line {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ruby-600);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .report-score-row {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .report-pct {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(2.5rem, 5vw, 3.3rem);
+      font-weight: 800;
+      color: var(--ruby-600);
+      line-height: 1;
+    }
+
+    .report-fraction {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--slate-600);
+    }
+
+    .grade-pill {
+      display: inline-block;
+      background: var(--crimson-800);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .report-summary-msg {
+      font-size: 0.93rem;
+      color: var(--slate-700);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .report-btn-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .mastery-section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid var(--slate-200);
+    }
+
+    .mastery-section-head h3 {
+      font-size: 1.05rem;
+      color: var(--slate-900);
+    }
+
+    .legend-row {
+      display: flex;
+      gap: 8px;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .tag-g { background: var(--emerald-50); color: var(--emerald-700); padding: 3px 9px; border-radius: 999px; }
+    .tag-a { background: var(--amber-50); color: var(--amber-700); padding: 3px 9px; border-radius: 999px; }
+    .tag-r { background: var(--rose-50); color: var(--ruby-600); padding: 3px 9px; border-radius: 999px; }
+
+    .mastery-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .mastery-item {
+      border: 1.5px solid var(--slate-200);
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: #ffffff;
+    }
+
+    .mastery-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .mastery-name {
+      font-weight: 700;
+      font-size: 0.94rem;
+      color: var(--slate-900);
+    }
+
+    .mastery-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-chip {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .sc-strong { background: var(--emerald-100); color: var(--emerald-700); }
+    .sc-dev { background: var(--amber-100); color: var(--amber-700); }
+    .sc-weak { background: var(--rose-100); color: var(--ruby-600); }
+
+    .mastery-bar-track {
+      width: 100%;
+      height: 8px;
+      background: var(--slate-100);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 7px;
+    }
+
+    .mastery-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .fill-g { background: var(--emerald-600); }
+    .fill-a { background: var(--amber-600); }
+    .fill-r { background: var(--ruby-500); }
+
+    .mastery-tip {
+      font-size: 0.82rem;
+      color: var(--slate-600);
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .review-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .review-card {
+      border: 1.5px solid var(--slate-200);
+      border-left: 5px solid var(--slate-400);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .review-card.rc-ok { border-left-color: var(--emerald-600); }
+    .review-card.rc-bad { border-left-color: var(--ruby-500); }
+
+    .rc-kicker {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--ruby-600);
+      margin-bottom: 4px;
+    }
+
+    .rc-q {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+
+    .rc-ans {
+      font-size: 0.86rem;
+      margin-bottom: 3px;
+    }
+
+    .rc-exp {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--slate-200);
+      font-size: 0.84rem;
+      color: var(--slate-700);
+      line-height: 1.52;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--slate-400);
+      margin-top: 1.5rem;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 820px) {
+      .tier-grid {
+        grid-template-columns: 1fr;
+      }
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 0.75rem 0.65rem 2rem;
+      }
+      .banner-header {
+        padding: 24px 20px;
+      }
+      .card-body {
+        padding: 20px 18px 26px;
+      }
+      .input-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .count-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .kbd-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- ======================================================================
+         CRIMSON HEADER BANNER
+         ====================================================================== -->
+    <header class="banner-header">
+      <div class="banner-top-row">
+        <span class="spec-pill">TOPIC 3 &bull; PAPER 1 REVISION (8462 &amp; 8464)</span>
+        <span class="brand-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fecaca" stroke-width="2.2">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+            <line x1="8" y1="6" x2="16" y2="6"></line>
+            <line x1="8" y1="10" x2="10" y2="10"></line>
+            <line x1="14" y1="10" x2="16" y2="10"></line>
+            <line x1="8" y1="14" x2="10" y2="14"></line>
+            <line x1="14" y1="14" x2="16" y2="14"></line>
+            <line x1="8" y1="18" x2="16" y2="18"></line>
+          </svg>
+          Mr Leek Science
+        </span>
+      </div>
+      <h1 id="banner-main-title" class="banner-title">Configure Your Quantitative Chemistry Quiz</h1>
+      <p id="banner-main-sub" class="banner-subtitle">Enter your name, choose your tier, select either all Topic 3 content or Higher/Triple calculation drills, and pick your question count.</p>
+    </header>
+
+    <!-- ======================================================================
+         VIEW 1: CONFIGURATION SCREEN
+         ====================================================================== -->
+    <main id="view-config" class="card-body">
+      <!-- Row 1: Student Name & Email Address -->
+      <div class="section-block input-grid">
+        <div class="field-group">
+          <label for="student-name" class="field-label">Student Name <span class="req-star">*</span></label>
+          <input type="text" id="student-name" class="text-input" placeholder="Enter your full name" autocomplete="name" />
+          <span id="name-error-msg" class="error-hint hidden">Please enter your name before starting the quiz.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="student-email" class="field-label">Email Address <span class="opt-muted">(Optional)</span></label>
+          <input type="email" id="student-email" class="text-input" placeholder="e.g. student@school.co.uk" autocomplete="email" />
+        </div>
+      </div>
+
+      <!-- Row 2: Select Tier / Pathway -->
+      <div class="section-block">
+        <div class="section-header-bar">
+          <span class="section-title">Select Tier / Pathway</span>
+          <span id="selected-tier-badge" class="selected-tier-pill">Higher Tier Selected</span>
+        </div>
+
+        <div class="tier-grid" role="radiogroup" aria-label="Select Tier or Pathway">
+          <!-- Foundation Tier -->
+          <div class="tier-card" id="tier-card-foundation" role="radio" aria-checked="false" tabindex="0" onclick="selectTier('foundation')" onkeydown="if(event.key==='Enter'||event.key===' ')selectTier('foundation')">
+            <div class="tier-card-top">
+              <span class="spec-chip chip-blue">COMBINED 8464</span>
+              <span class="radio-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+            </div>
+            <div class="tier-card-title">Foundation Tier</div>
+            <p class="tier-card-desc">Conservation of mass, balancing equations, relative formula mass (M<sub>r</sub>), mass changes with gases, uncertainty &amp; range, and concentration in g/dm<sup>3</sup> (Grades 1–5).</p>
+          </div>
+
+          <!-- Higher Tier (Default Selected) -->
+          <div class="tier-card selected" id="tier-card-higher" role="radio" aria-checked="true" tabindex="0" onclick="selectTier('higher')" onkeydown="if(event.key==='Enter'||event.key===' ')selectTier('higher')">
+            <div class="tier-card-top">
+              <span class="spec-chip chip-rose">COMBINED 8464</span>
+              <span class="radio-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+            </div>
+            <div class="tier-card-title">Higher Tier</div>
+            <p class="tier-card-desc">Includes moles &amp; Avogadro constant (6.02 &times; 10<sup>23</sup>), mass = M<sub>r</sub> &times; moles, reacting mass calculations, limiting reactants, and balancing equations using moles (Grades 4–9).</p>
+          </div>
+
+          <!-- Separate Chemistry -->
+          <div class="tier-card" id="tier-card-separate" role="radio" aria-checked="false" tabindex="0" onclick="selectTier('separate')" onkeydown="if(event.key==='Enter'||event.key===' ')selectTier('separate')">
+            <div class="tier-card-top">
+              <span class="spec-chip chip-purple">TRIPLE 8462</span>
+              <span class="radio-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+            </div>
+            <div class="tier-card-title">Separate Chemistry</div>
+            <p class="tier-card-desc">Full 8462 content including percentage yield, atom economy, molar concentration (mol/dm<sup>3</sup>), titration calculations, and gas volumes (24 dm<sup>3</sup> at RTP) (Grades 1–9).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Quiz Focus -->
+      <div class="section-block">
+        <div class="section-header-bar">
+          <span class="section-title">Quiz Focus</span>
+        </div>
+
+        <div class="focus-grid" role="radiogroup" aria-label="Quiz Focus">
+          <!-- All Topics -->
+          <div class="focus-card selected" id="focus-card-all" role="radio" aria-checked="true" tabindex="0" onclick="selectFocus('all')" onkeydown="if(event.key==='Enter'||event.key===' ')selectFocus('all')">
+            <div class="focus-icon-box focus-icon-ruby" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <div class="focus-content">
+              <div class="focus-title">
+                <span>All Quantitative Chemistry Topics</span>
+                <span id="focus-check-all" class="focus-check">&#10003;</span>
+              </div>
+              <p class="focus-desc">Covers conservation of mass, M<sub>r</sub>, moles, reacting masses, limiting reactants, concentration, percentage yield, atom economy &amp; gas volumes.</p>
+            </div>
+          </div>
+
+          <!-- Core Calculations & Multi-Step Maths Only -->
+          <div class="focus-card" id="focus-card-calc" role="radio" aria-checked="false" tabindex="0" onclick="selectFocus('calc')" onkeydown="if(event.key==='Enter'||event.key===' ')selectFocus('calc')">
+            <div class="focus-icon-box focus-icon-amber" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                <line x1="8" y1="6" x2="16" y2="6"></line>
+                <line x1="8" y1="10" x2="10" y2="10"></line>
+                <line x1="14" y1="10" x2="16" y2="10"></line>
+                <line x1="8" y1="14" x2="10" y2="14"></line>
+                <line x1="14" y1="14" x2="16" y2="14"></line>
+                <line x1="8" y1="18" x2="16" y2="18"></line>
+              </svg>
+            </div>
+            <div class="focus-content">
+              <div class="focus-title">
+                <span>Core Calculations &amp; Multi-Step Maths Only</span>
+                <span id="focus-check-calc" class="focus-check hidden">&#10003;</span>
+              </div>
+              <p class="focus-desc">Focused calculation drill: M<sub>r</sub>, moles, reacting masses, limiting reactants, percentage yield, atom economy, titrations &amp; gas volumes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4: Number of Questions -->
+      <div class="section-block" style="margin-bottom: 0;">
+        <div class="section-header-bar">
+          <span class="section-title">Number of Questions</span>
+          <span id="available-q-label" class="avail-count-text">46 unique questions available for Higher Tier</span>
+        </div>
+
+        <div class="count-grid" role="radiogroup" aria-label="Number of Questions">
+          <button type="button" class="count-btn" data-count="10" onclick="selectCount(10)">10</button>
+          <button type="button" class="count-btn active" data-count="20" onclick="selectCount(20)">20</button>
+          <button type="button" class="count-btn" data-count="30" onclick="selectCount(30)">30</button>
+          <button type="button" class="count-btn" data-count="50" onclick="selectCount(50)">50</button>
+          <button type="button" class="count-btn" data-count="80" onclick="selectCount(80)">80</button>
+        </div>
+      </div>
+
+      <hr class="cta-divider" />
+
+      <button type="button" id="btn-start-quiz" class="btn-start-cta" onclick="launchConfiguredQuiz()">
+        Start Higher Tier Quiz (20 Questions) &rarr;
+      </button>
+    </main>
+
+    <!-- ======================================================================
+         VIEW 2: ACTIVE QUIZ RUNNER
+         ====================================================================== -->
+    <section id="view-quiz" class="card-body hidden" aria-live="polite">
+      <div class="quiz-hud">
+        <div class="hud-badges">
+          <span id="hud-student-pill" class="hud-pill-dark">Student</span>
+          <span id="hud-tier-pill" class="hud-pill-rose">Higher Tier</span>
+          <span id="hud-topic-pill" class="hud-pill-rose">Sub-topic</span>
+          <span id="hud-retry-pill" class="hud-pill-amber hidden">Retry Missed Mode</span>
+        </div>
+
+        <div class="hud-stats">
+          <span id="hud-live-score" class="hud-score-badge">Score: 0 / 0</span>
+          <span id="hud-counter" class="hud-q-counter">Question 1 of 20</span>
+          <button type="button" class="hud-change-btn" onclick="returnToConfig()">Change Settings</button>
+        </div>
+      </div>
+
+      <div class="progress-track">
+        <div id="quiz-progress-fill" class="progress-fill"></div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-meta-row">
+          <span id="q-kicker-label" class="q-kicker">Question 1</span>
+          <span class="kbd-tip">Shortcuts: 1–4 or A–D to answer &bull; Enter for Next</span>
+        </div>
+        <div id="q-stem-text" class="q-stem">Question stem</div>
+        <div id="q-formula-box" class="q-formula-box hidden"></div>
+      </div>
+
+      <div id="quiz-options-list" class="options-list"></div>
+
+      <div id="quiz-feedback-panel" class="feedback-panel hidden">
+        <div class="fb-top">
+          <span id="fb-status-text" class="fb-status"></span>
+          <span class="fb-chip">AQA Examiner Insight</span>
+        </div>
+        <div id="fb-insight-text" class="fb-text"></div>
+      </div>
+
+      <div class="quiz-bottom-actions">
+        <button type="button" class="btn-secondary" onclick="returnToConfig()">&larr; Change Settings</button>
+        <button type="button" id="btn-next-question" class="btn-primary-sm hidden" onclick="advanceQuestion()">Next Question &rarr;</button>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 3: END-OF-QUIZ DIAGNOSTIC REPORT
+         ====================================================================== -->
+    <section id="view-report" class="card-body hidden">
+      <div class="report-hero-box">
+        <div id="rep-student-header" class="report-student-line">Diagnostic Report &bull; Student</div>
+        <div class="report-score-row">
+          <span id="rep-pct-val" class="report-pct">85%</span>
+          <span id="rep-frac-val" class="report-fraction">(17 / 20)</span>
+        </div>
+        <div id="rep-grade-pill" class="grade-pill">Estimated AQA Indicator: Grade 8</div>
+        <p id="rep-msg-text" class="report-summary-msg"></p>
+      </div>
+
+      <div class="report-btn-row">
+        <button type="button" id="btn-retry-missed" class="btn-primary-sm" onclick="startRetryMissed()">Retry Missed Questions (3)</button>
+        <button type="button" class="btn-secondary" onclick="launchConfiguredQuiz()">Retake Full Quiz</button>
+        <button type="button" class="btn-secondary" onclick="returnToConfig()">Change Settings</button>
+      </div>
+
+      <div class="mastery-section-head">
+        <h3>Sub-Topic Mastery Breakdown</h3>
+        <div class="legend-row">
+          <span class="tag-g">Strong (80%+)</span>
+          <span class="tag-a">Developing (50–79%)</span>
+          <span class="tag-r">Priority Revision (&lt;50%)</span>
+        </div>
+      </div>
+
+      <div id="rep-mastery-grid" class="mastery-grid"></div>
+
+      <div class="review-header">
+        <h3 style="font-size: 1.05rem; color: var(--slate-900);">Full Question-by-Question Review</h3>
+        <button type="button" id="btn-toggle-review" class="btn-secondary" onclick="toggleReviewSection()">Show All Answers &amp; Insights</button>
+      </div>
+
+      <div id="rep-review-list" class="review-list hidden"></div>
+    </section>
+  </div>
+
+  <p class="footer-note">&copy; Mr Leek Science &bull; AQA GCSE Chemistry (8462 &amp; 8464) Topic 3 Interactive Assessment</p>
+
+  <script>
+    /* ==========================================================================
+       AQA GCSE CHEMISTRY TOPIC 3 QUESTION BANK (68 DISTINCT QUESTIONS)
+       tiers: ["foundation", "higher", "separate"]
+       isCalcDrill: true for Core Calculations & Multi-Step Maths Only
+       ========================================================================== */
+    const SUBTOPIC_GUIDANCE = {
+      "Conservation of Mass & Relative Formula Mass (Mr)": "Practise summing A<sub>r</sub> values carefully (multiplying inside brackets first), explaining apparent mass changes when gases enter or escape open containers, and calculating uncertainty = &plusmn; (range &divide; 2).",
+      "Moles & Avogadro's Constant": "Memorise moles = mass &divide; M<sub>r</sub> (or A<sub>r</sub>) and Avogadro's constant (6.02 &times; 10<sup>23</sup> per mole). Remember: mass is always in grams!",
+      "Reacting Masses & Limiting Reactants": "Follow the 3-step mole bridge: (1) Moles of known substance = mass &divide; M<sub>r</sub>, (2) Use balanced equation ratio, (3) Mass of target = moles &times; M<sub>r</sub>. Always check which reactant runs out first!",
+      "Concentration of Solutions": "Always convert volume from cm<sup>3</sup> to dm<sup>3</sup> by dividing by 1000 before using C = m &divide; V (g/dm<sup>3</sup>) or n = C &times; V (mol/dm<sup>3</sup>). To convert mol/dm<sup>3</sup> to g/dm<sup>3</sup>, multiply by M<sub>r</sub>.",
+      "Percentage Yield & Atom Economy (Triple 8462)": "Contrast % yield (actual &divide; theoretical &times; 100 — practical efficiency) with % atom economy (M<sub>r</sub> of desired product &divide; sum of M<sub>r</sub> of all reactants &times; 100 — reaction pathway sustainability).",
+      "Molar Gas Volumes (Triple 8462)": "At RTP (20 &deg;C and 1 atm), 1 mole of ANY gas occupies 24 dm<sup>3</sup> (24,000 cm<sup>3</sup>). For gas-to-gas reactions, balanced equation mole ratios equal volume ratios directly!"
+    };
+
+    const QUESTION_POOL = [
+      // ========================================================================
+      // 1. CONSERVATION OF MASS & RELATIVE FORMULA MASS (Mr) (14 Questions)
+      // ========================================================================
+      {
+        id: "T3_Q01",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: false,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "Which statement accurately expresses the law of conservation of mass in a chemical reaction?",
+        formula: null,
+        options: [
+          "No atoms are lost or made during a chemical reaction, so the total mass of products equals the total mass of reactants",
+          "The volume of gases produced always equals the volume of solid reactants",
+          "Mass always increases when a substance is heated in a sealed flask",
+          "Atoms are converted into thermal energy during exothermic reactions"
+        ],
+        answer: 0,
+        insight: "In every chemical reaction, atoms are simply rearranged—none are created or destroyed—so total mass is conserved."
+      },
+      {
+        id: "T3_Q02",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "Calculate the relative formula mass (M<sub>r</sub>) of sulfuric acid.",
+        formula: "H<sub>2</sub>SO<sub>4</sub> &nbsp;|&nbsp; A<sub>r</sub>: H = 1, S = 32, O = 16",
+        options: ["49", "82", "98", "100"],
+        answer: 2,
+        insight: "M<sub>r</sub>(H<sub>2</sub>SO<sub>4</sub>) = (2 &times; 1) + 32 + (4 &times; 16) = 2 + 32 + 64 = 98."
+      },
+      {
+        id: "T3_Q03",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "Calculate the relative formula mass (M<sub>r</sub>) of calcium hydroxide.",
+        formula: "Ca(OH)<sub>2</sub> &nbsp;|&nbsp; A<sub>r</sub>: Ca = 40, O = 16, H = 1",
+        options: ["57", "58", "74", "114"],
+        answer: 2,
+        insight: "Everything inside the bracket (OH = 16 + 1 = 17) is multiplied by 2: M<sub>r</sub> = 40 + (2 &times; 17) = 40 + 34 = 74."
+      },
+      {
+        id: "T3_Q04",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "Calculate the relative formula mass (M<sub>r</sub>) of aluminium sulfate.",
+        formula: "Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> &nbsp;|&nbsp; A<sub>r</sub>: Al = 27, S = 32, O = 16",
+        options: ["150", "278", "342", "450"],
+        answer: 2,
+        insight: "SO<sub>4</sub> = 32 + (4 &times; 16) = 96. Multiply by 3: 3 &times; 96 = 288. Add 2 Al atoms (2 &times; 27 = 54): 54 + 288 = 342."
+      },
+      {
+        id: "T3_Q05",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "Calculate the percentage by mass of nitrogen in ammonium nitrate.",
+        formula: "NH<sub>4</sub>NO<sub>3</sub> &nbsp;|&nbsp; M<sub>r</sub> = 80 &nbsp;|&nbsp; A<sub>r</sub>(N) = 14",
+        options: ["17.5%", "35.0%", "43.8%", "70.0%"],
+        answer: 1,
+        insight: "There are TWO nitrogen atoms in NH<sub>4</sub>NO<sub>3</sub>: total mass of N = 2 &times; 14 = 28. Percentage = (28 &divide; 80) &times; 100 = 35.0%."
+      },
+      {
+        id: "T3_Q06",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: false,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "When magnesium ribbon burns in air in an open crucible, the white magnesium oxide ash formed has a greater mass than the original magnesium. Why?",
+        formula: "2Mg(s) + O<sub>2</sub>(g) &rarr; 2MgO(s)",
+        options: [
+          "The law of conservation of mass does not apply to combustion",
+          "Oxygen gas from the air reacts with the magnesium and becomes part of the solid product",
+          "Heat energy is converted into extra protons",
+          "Magnesium absorbs nitrogen gas to form magnesium chloride"
+        ],
+        answer: 1,
+        insight: "In a non-enclosed system, oxygen gas (O<sub>2</sub>) enters from the surrounding air and chemically combines with magnesium, increasing the mass on the balance."
+      },
+      {
+        id: "T3_Q07",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: false,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "Calcium carbonate is heated strongly in an open boiling tube and decomposes into calcium oxide and carbon dioxide. Why does the mass measured on a balance decrease?",
+        formula: "CaCO<sub>3</sub>(s) &rarr; CaO(s) + CO<sub>2</sub>(g)",
+        options: [
+          "Carbon dioxide is a gas that escapes into the surroundings from the open tube",
+          "Calcium oxide has a smaller density than calcium carbonate",
+          "Atoms are destroyed by the Bunsen flame",
+          "The balance cannot weigh hot solids"
+        ],
+        answer: 0,
+        insight: "Because the boiling tube is open (not enclosed), gaseous CO<sub>2</sub> escapes into the room, so its mass is no longer recorded on the balance."
+      },
+      {
+        id: "T3_Q08",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "A student repeats a titration four times and records titres of 24.10 cm<sup>3</sup>, 24.30 cm<sup>3</sup>, 24.00 cm<sup>3</sup>, and 24.40 cm<sup>3</sup>. Calculate the mean and its uncertainty.",
+        formula: "Uncertainty = &plusmn; (Range &divide; 2)",
+        options: [
+          "24.20 &plusmn; 0.40 cm<sup>3</sup>",
+          "24.20 &plusmn; 0.20 cm<sup>3</sup>",
+          "24.20 &plusmn; 0.10 cm<sup>3</sup>",
+          "24.15 &plusmn; 0.20 cm<sup>3</sup>"
+        ],
+        answer: 1,
+        insight: "Mean = (24.10 + 24.30 + 24.00 + 24.40) &divide; 4 = 24.20 cm<sup>3</sup>. Range = 24.40 &minus; 24.00 = 0.40 cm<sup>3</sup>. Uncertainty = &plusmn;(0.40 &divide; 2) = &plusmn;0.20 cm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q09",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "In a sealed flask, 5.6 g of iron reacts completely with 3.2 g of sulfur to form iron(II) sulfide. What mass of iron(II) sulfide is produced?",
+        formula: "Fe(s) + S(s) &rarr; FeS(s)",
+        options: ["2.4 g", "5.6 g", "8.8 g", "17.9 g"],
+        answer: 2,
+        insight: "By conservation of mass in a closed system: 5.6 g + 3.2 g = 8.8 g of FeS."
+      },
+      {
+        id: "T3_Q10",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "When 20.0 g of calcium carbonate is heated in an open crucible, 11.2 g of solid calcium oxide remains. What mass of carbon dioxide gas escaped?",
+        formula: "CaCO<sub>3</sub>(s) &rarr; CaO(s) + CO<sub>2</sub>(g)",
+        options: ["8.8 g", "11.2 g", "20.0 g", "31.2 g"],
+        answer: 0,
+        insight: "Total mass before = 20.0 g. Remaining solid = 11.2 g. Escaped CO<sub>2</sub> gas = 20.0 &minus; 11.2 = 8.8 g."
+      },
+      {
+        id: "T3_Q11",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "Calculate the relative formula mass (M<sub>r</sub>) of hydrated copper(II) sulfate crystals.",
+        formula: "CuSO<sub>4</sub>&middot;5H<sub>2</sub>O &nbsp;|&nbsp; A<sub>r</sub>: Cu = 63.5, S = 32, O = 16, H = 1",
+        options: ["159.5", "177.5", "249.5", "267.5"],
+        answer: 2,
+        insight: "CuSO<sub>4</sub> = 63.5 + 32 + (4 &times; 16) = 159.5. Five water molecules = 5 &times; 18 = 90. Total M<sub>r</sub> = 159.5 + 90 = 249.5."
+      },
+      {
+        id: "T3_Q12",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "A balance records masses of 12.45 g, 12.51 g, and 12.48 g for three repeat experiments. What is the uncertainty of the mean measurement?",
+        formula: "Uncertainty = &plusmn; (Maximum &minus; Minimum) &divide; 2",
+        options: ["&plusmn; 0.06 g", "&plusmn; 0.03 g", "&plusmn; 0.02 g", "&plusmn; 0.01 g"],
+        answer: 1,
+        insight: "Range = 12.51 &minus; 12.45 = 0.06 g. Half the range = 0.06 &divide; 2 = &plusmn; 0.03 g."
+      },
+      {
+        id: "T3_Q13",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: false,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "In any chemical formula, how does the sum of the relative formula masses (M<sub>r</sub>) of the reactants compare with the sum of the M<sub>r</sub> of the products in a balanced equation?",
+        formula: "2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O",
+        options: [
+          "The sum of M<sub>r</sub> of reactants is always equal to the sum of M<sub>r</sub> of products",
+          "The sum of M<sub>r</sub> of products is always smaller",
+          "The sum of M<sub>r</sub> of reactants is always double the products",
+          "They are only equal if all substances are solids"
+        ],
+        answer: 0,
+        insight: "In 2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O: Reactants = 2(2) + 32 = 36; Products = 2(18) = 36. Balanced equations always conserve total M<sub>r</sub>."
+      },
+      {
+        id: "T3_Q14",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Conservation of Mass & Relative Formula Mass (Mr)",
+        stem: "Calculate the percentage by mass of oxygen in iron(III) oxide.",
+        formula: "Fe<sub>2</sub>O<sub>3</sub> &nbsp;|&nbsp; A<sub>r</sub>: Fe = 56, O = 16",
+        options: ["22.2%", "30.0%", "48.0%", "70.0%"],
+        answer: 1,
+        insight: "M<sub>r</sub>(Fe<sub>2</sub>O<sub>3</sub>) = (2 &times; 56) + (3 &times; 16) = 112 + 48 = 160. % Oxygen = (48 &divide; 160) &times; 100 = 30.0%."
+      },
+
+      // ========================================================================
+      // 2. MOLES & AVOGADRO'S CONSTANT (HIGHER & SEPARATE — 10 Questions)
+      // ========================================================================
+      {
+        id: "T3_Q15",
+        tiers: ["higher", "separate"],
+        isCalcDrill: false,
+        topic: "Moles & Avogadro's Constant",
+        stem: "What is the value of the Avogadro constant (the number of atoms, molecules, or ions in 1 mole of any substance)?",
+        formula: "1 mol",
+        options: [
+          "6.02 &times; 10<sup>23</sup> per mole",
+          "6.02 &times; 10<sup>&minus;23</sup> per mole",
+          "1.67 &times; 10<sup>&minus;27</sup> per mole",
+          "24.0 &times; 10<sup>3</sup> per mole"
+        ],
+        answer: 0,
+        insight: "One mole of any substance contains 6.02 &times; 10<sup>23</sup> particles (atoms, molecules, ions, or electrons)."
+      },
+      {
+        id: "T3_Q16",
+        tiers: ["higher", "separate"],
+        isCalcDrill: false,
+        topic: "Moles & Avogadro's Constant",
+        stem: "What is the mass of exactly 1 mole of carbon-12 atoms?",
+        formula: "<sup>12</sup>C",
+        options: ["1 g", "6 g", "12 g", "6.02 &times; 10<sup>23</sup> g"],
+        answer: 2,
+        insight: "The mass of 1 mole of a substance in grams is numerically equal to its relative atomic mass (A<sub>r</sub>) or relative formula mass (M<sub>r</sub>). For <sup>12</sup>C, 1 mole = 12 g."
+      },
+      {
+        id: "T3_Q17",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Moles & Avogadro's Constant",
+        stem: "How many moles are present in 11.0 g of carbon dioxide?",
+        formula: "Moles = Mass (g) &divide; M<sub>r</sub> &nbsp;|&nbsp; M<sub>r</sub>(CO<sub>2</sub>) = 44",
+        options: ["0.25 mol", "0.50 mol", "4.0 mol", "484 mol"],
+        answer: 0,
+        insight: "Moles = 11.0 g &divide; 44 = 0.25 mol."
+      },
+      {
+        id: "T3_Q18",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Moles & Avogadro's Constant",
+        stem: "Calculate the mass in grams of 0.40 moles of sodium hydroxide.",
+        formula: "Mass = Moles &times; M<sub>r</sub> &nbsp;|&nbsp; M<sub>r</sub>(NaOH) = 40",
+        options: ["0.01 g", "10 g", "16 g", "100 g"],
+        answer: 2,
+        insight: "Mass = 0.40 mol &times; 40 = 16 g."
+      },
+      {
+        id: "T3_Q19",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Moles & Avogadro's Constant",
+        stem: "How many water molecules are present in 9.0 g of water?",
+        formula: "M<sub>r</sub>(H<sub>2</sub>O) = 18 &nbsp;|&nbsp; L = 6.02 &times; 10<sup>23</sup> mol<sup>&minus;1</sup>",
+        options: [
+          "3.01 &times; 10<sup>23</sup> molecules",
+          "6.02 &times; 10<sup>23</sup> molecules",
+          "1.204 &times; 10<sup>24</sup> molecules",
+          "5.42 &times; 10<sup>24</sup> molecules"
+        ],
+        answer: 0,
+        insight: "Moles of H<sub>2</sub>O = 9.0 &divide; 18 = 0.50 mol. Number of molecules = 0.50 &times; 6.02 &times; 10<sup>23</sup> = 3.01 &times; 10<sup>23</sup>."
+      },
+      {
+        id: "T3_Q20",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Moles & Avogadro's Constant",
+        stem: "How many total IONS are present in 0.50 moles of magnesium chloride?",
+        formula: "MgCl<sub>2</sub> &rarr; 1 Mg<sup>2+</sup> + 2 Cl<sup>&minus;</sup> &nbsp;|&nbsp; L = 6.02 &times; 10<sup>23</sup> mol<sup>&minus;1</sup>",
+        options: [
+          "3.01 &times; 10<sup>23</sup> ions",
+          "6.02 &times; 10<sup>23</sup> ions",
+          "9.03 &times; 10<sup>23</sup> ions",
+          "1.81 &times; 10<sup>24</sup> ions"
+        ],
+        answer: 2,
+        insight: "1 formula unit of MgCl<sub>2</sub> contains 3 ions (1 Mg<sup>2+</sup> + 2 Cl<sup>−</sup>). So 0.50 mol of MgCl<sub>2</sub> contains 0.50 &times; 3 = 1.50 mol of ions &rarr; 1.50 &times; 6.02 &times; 10<sup>23</sup> = 9.03 &times; 10<sup>23</sup> ions."
+      },
+      {
+        id: "T3_Q21",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Moles & Avogadro's Constant",
+        stem: "0.25 moles of an unknown element X has a mass of 14.0 g. Calculate the relative atomic mass (A<sub>r</sub>) of element X and identify it.",
+        formula: "A<sub>r</sub> = Mass &divide; Moles",
+        options: [
+          "A<sub>r</sub> = 3.5 (Helium)",
+          "A<sub>r</sub> = 28 (Silicon)",
+          "A<sub>r</sub> = 56 (Iron)",
+          "A<sub>r</sub> = 14 (Nitrogen)"
+        ],
+        answer: 2,
+        insight: "A<sub>r</sub> = 14.0 g &divide; 0.25 mol = 56, which is iron (Fe)."
+      },
+      {
+        id: "T3_Q22",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Moles & Avogadro's Constant",
+        stem: "Calculate the mass of 3.01 &times; 10<sup>22</sup> atoms of calcium.",
+        formula: "A<sub>r</sub>(Ca) = 40 &nbsp;|&nbsp; L = 6.02 &times; 10<sup>23</sup> mol<sup>&minus;1</sup>",
+        options: ["0.20 g", "2.0 g", "20 g", "800 g"],
+        answer: 1,
+        insight: "Moles = (3.01 &times; 10<sup>22</sup>) &divide; (6.02 &times; 10<sup>23</sup>) = 0.050 mol. Mass = 0.050 &times; 40 = 2.0 g."
+      },
+      {
+        id: "T3_Q23",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Moles & Avogadro's Constant",
+        stem: "Which sample contains the GREATEST number of molecules?",
+        formula: "M<sub>r</sub>: H<sub>2</sub> = 2, CH<sub>4</sub> = 16, CO<sub>2</sub> = 44, SO<sub>2</sub> = 64",
+        options: [
+          "4.0 g of H<sub>2</sub>",
+          "16.0 g of CH<sub>4</sub>",
+          "44.0 g of CO<sub>2</sub>",
+          "32.0 g of SO<sub>2</sub>"
+        ],
+        answer: 0,
+        insight: "Compare moles (more moles = more molecules): 4.0 g H<sub>2</sub> = 4.0 &divide; 2 = 2.0 mol (highest!). The others are 1.0 mol, 1.0 mol, and 0.5 mol."
+      },
+      {
+        id: "T3_Q24",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Moles & Avogadro's Constant",
+        stem: "A gold ring contains 0.050 moles of pure gold (A<sub>r</sub> = 197). What is the mass of gold in the ring?",
+        formula: "Mass = Moles &times; A<sub>r</sub>",
+        options: ["0.985 g", "9.85 g", "39.4 g", "98.5 g"],
+        answer: 1,
+        insight: "Mass = 0.050 mol &times; 197 = 9.85 g."
+      },
+
+      // ========================================================================
+      // 3. REACTING MASSES & LIMITING REACTANTS (HIGHER & SEPARATE — 12 Qs)
+      // ========================================================================
+      {
+        id: "T3_Q25",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "Calculate the mass of magnesium oxide formed when 4.8 g of magnesium burns completely in excess oxygen.",
+        formula: "2Mg(s) + O<sub>2</sub>(g) &rarr; 2MgO(s) &nbsp;|&nbsp; A<sub>r</sub>: Mg = 24, O = 16",
+        options: ["4.0 g", "8.0 g", "16.0 g", "3.2 g"],
+        answer: 1,
+        insight: "Moles of Mg = 4.8 &divide; 24 = 0.20 mol. Ratio Mg : MgO is 2 : 2 (1 : 1), so 0.20 mol MgO forms. Mass = 0.20 &times; (24 + 16) = 0.20 &times; 40 = 8.0 g."
+      },
+      {
+        id: "T3_Q26",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "What mass of iron is produced when 32.0 g of iron(III) oxide is completely reduced by excess carbon monoxide?",
+        formula: "Fe<sub>2</sub>O<sub>3</sub> + 3CO &rarr; 2Fe + 3CO<sub>2</sub> &nbsp;|&nbsp; M<sub>r</sub>(Fe<sub>2</sub>O<sub>3</sub>) = 160, A<sub>r</sub>(Fe) = 56",
+        options: ["11.2 g", "22.4 g", "44.8 g", "16.0 g"],
+        answer: 1,
+        insight: "Moles of Fe<sub>2</sub>O<sub>3</sub> = 32.0 &divide; 160 = 0.20 mol. Ratio Fe<sub>2</sub>O<sub>3</sub> : Fe is 1 : 2 &rarr; 0.40 mol Fe. Mass = 0.40 &times; 56 = 22.4 g."
+      },
+      {
+        id: "T3_Q27",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "Calculate the mass of ammonia (NH<sub>3</sub>) produced when 14.0 g of nitrogen reacts completely with excess hydrogen.",
+        formula: "N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub> &nbsp;|&nbsp; M<sub>r</sub>(N<sub>2</sub>) = 28, M<sub>r</sub>(NH<sub>3</sub>) = 17",
+        options: ["8.5 g", "17.0 g", "34.0 g", "28.0 g"],
+        answer: 1,
+        insight: "Moles of N<sub>2</sub> = 14.0 &divide; 28 = 0.50 mol. Ratio N<sub>2</sub> : NH<sub>3</sub> is 1 : 2 &rarr; 1.00 mol NH<sub>3</sub>. Mass = 1.00 &times; 17 = 17.0 g."
+      },
+      {
+        id: "T3_Q28",
+        tiers: ["higher", "separate"],
+        isCalcDrill: false,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "In a chemical reaction between two reactants, what is meant by the 'limiting reactant'?",
+        formula: null,
+        options: [
+          "The reactant that is completely used up first, stopping the reaction and determining the maximum amount of product formed",
+          "The reactant present in the largest mass at the start",
+          "The catalyst that slows down the reaction rate",
+          "The reactant left over unreacted at the end of the experiment"
+        ],
+        answer: 0,
+        insight: "The limiting reactant is completely consumed first; once it runs out, no more product can be formed even if the other reactant is in excess."
+      },
+      {
+        id: "T3_Q29",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "0.30 mol of zinc is added to 0.50 mol of hydrochloric acid. Identify the limiting reactant and calculate how many moles of H<sub>2</sub> gas are produced.",
+        formula: "Zn(s) + 2HCl(aq) &rarr; ZnCl<sub>2</sub>(aq) + H<sub>2</sub>(g)",
+        options: [
+          "Zn is limiting; 0.30 mol H<sub>2</sub> formed",
+          "HCl is limiting; 0.25 mol H<sub>2</sub> formed",
+          "HCl is limiting; 0.50 mol H<sub>2</sub> formed",
+          "Zn is limiting; 0.15 mol H<sub>2</sub> formed"
+        ],
+        answer: 1,
+        insight: "0.30 mol Zn requires 2 &times; 0.30 = 0.60 mol HCl to react completely, so 0.50 mol HCl runs out first (limiting). Moles of H<sub>2</sub> = 0.50 &divide; 2 = 0.25 mol."
+      },
+      {
+        id: "T3_Q30",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "12.0 g of carbon (A<sub>r</sub> = 12) is heated with 40.0 g of oxygen gas (M<sub>r</sub> = 32). Which reactant is in excess, and what mass of CO<sub>2</sub> (M<sub>r</sub> = 44) is formed?",
+        formula: "C(s) + O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g)",
+        options: [
+          "Oxygen is in excess; 44.0 g of CO<sub>2</sub> is formed",
+          "Carbon is in excess; 55.0 g of CO<sub>2</sub> is formed",
+          "Oxygen is in excess; 52.0 g of CO<sub>2</sub> is formed",
+          "Neither is in excess; 44.0 g of CO<sub>2</sub> is formed"
+        ],
+        answer: 0,
+        insight: "Moles of C = 12.0 &divide; 12 = 1.00 mol. Moles of O<sub>2</sub> = 40.0 &divide; 32 = 1.25 mol. Ratio is 1 : 1, so C (1.00 mol) is limiting and O<sub>2</sub> is in excess. CO<sub>2</sub> formed = 1.00 &times; 44 = 44.0 g."
+      },
+      {
+        id: "T3_Q31",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "In an experiment, 2.3 g of sodium (A<sub>r</sub> = 23) reacted completely with 3.55 g of chlorine gas (M<sub>r</sub> = 71) to form 5.85 g of NaCl (M<sub>r</sub> = 58.5). Use moles to deduce the balanced equation.",
+        formula: "Na : Cl<sub>2</sub> : NaCl",
+        options: [
+          "Na + Cl<sub>2</sub> &rarr; NaCl",
+          "2Na + Cl<sub>2</sub> &rarr; 2NaCl",
+          "Na + 2Cl<sub>2</sub> &rarr; NaCl<sub>2</sub>",
+          "2Na + 2Cl<sub>2</sub> &rarr; 2NaCl"
+        ],
+        answer: 1,
+        insight: "Moles: Na = 2.3 &divide; 23 = 0.10 mol; Cl<sub>2</sub> = 3.55 &divide; 71 = 0.05 mol; NaCl = 5.85 &divide; 58.5 = 0.10 mol. Divide by smallest (0.05): ratio is 2 : 1 : 2 &rarr; 2Na + Cl<sub>2</sub> &rarr; 2NaCl."
+      },
+      {
+        id: "T3_Q32",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "What mass of calcium carbonate (M<sub>r</sub> = 100) must be thermally decomposed to produce 28.0 g of calcium oxide (M<sub>r</sub> = 56)?",
+        formula: "CaCO<sub>3</sub>(s) &rarr; CaO(s) + CO<sub>2</sub>(g)",
+        options: ["28.0 g", "44.0 g", "50.0 g", "100.0 g"],
+        answer: 2,
+        insight: "Moles of CaO = 28.0 &divide; 56 = 0.50 mol. Ratio CaCO<sub>3</sub> : CaO is 1 : 1 &rarr; 0.50 mol CaCO<sub>3</sub> needed. Mass = 0.50 &times; 100 = 50.0 g."
+      },
+      {
+        id: "T3_Q33",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "9.2 g of sodium (A<sub>r</sub> = 23) reacts with excess water. Calculate the mass of hydrogen gas (M<sub>r</sub> = 2) released.",
+        formula: "2Na(s) + 2H<sub>2</sub>O(l) &rarr; 2NaOH(aq) + H<sub>2</sub>(g)",
+        options: ["0.20 g", "0.40 g", "0.80 g", "1.60 g"],
+        answer: 1,
+        insight: "Moles of Na = 9.2 &divide; 23 = 0.40 mol. Ratio Na : H<sub>2</sub> is 2 : 1 &rarr; 0.20 mol H<sub>2</sub>. Mass = 0.20 &times; 2 = 0.40 g."
+      },
+      {
+        id: "T3_Q34",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "When 8.0 g of methane (M<sub>r</sub> = 16) burns completely in excess oxygen, what mass of water (M<sub>r</sub> = 18) is produced?",
+        formula: "CH<sub>4</sub>(g) + 2O<sub>2</sub>(g) &rarr; CO<sub>2</sub>(g) + 2H<sub>2</sub>O(l)",
+        options: ["9.0 g", "18.0 g", "22.0 g", "36.0 g"],
+        answer: 1,
+        insight: "Moles of CH<sub>4</sub> = 8.0 &divide; 16 = 0.50 mol. Ratio CH<sub>4</sub> : H<sub>2</sub>O is 1 : 2 &rarr; 1.00 mol H<sub>2</sub>O. Mass = 1.00 &times; 18 = 18.0 g."
+      },
+      {
+        id: "T3_Q35",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "5.4 g of aluminium (A<sub>r</sub> = 27) is reacted with 19.2 g of oxygen gas (M<sub>r</sub> = 32). Which is the limiting reactant?",
+        formula: "4Al(s) + 3O<sub>2</sub>(g) &rarr; 2Al<sub>2</sub>O<sub>3</sub>(s)",
+        options: [
+          "Aluminium (0.20 mol Al needs only 0.15 mol O<sub>2</sub>, and 0.60 mol O<sub>2</sub> is available)",
+          "Oxygen (0.60 mol O<sub>2</sub> runs out before 0.20 mol Al)",
+          "Both run out at the exact same time",
+          "Aluminium oxide is the limiting reactant"
+        ],
+        answer: 0,
+        insight: "Moles Al = 5.4 &divide; 27 = 0.20 mol. Moles O<sub>2</sub> = 19.2 &divide; 32 = 0.60 mol. From 4 : 3 ratio, 0.20 mol Al only needs 0.15 mol O<sub>2</sub>, so Al is limiting and O<sub>2</sub> is in excess."
+      },
+      {
+        id: "T3_Q36",
+        tiers: ["higher", "separate"],
+        isCalcDrill: true,
+        topic: "Reacting Masses & Limiting Reactants",
+        stem: "15.9 g of copper(II) oxide (M<sub>r</sub> = 79.5) reacts completely with 0.60 g of carbon (A<sub>r</sub> = 12) to form 12.7 g of copper (A<sub>r</sub> = 63.5) and 4.4 g of CO<sub>2</sub> (M<sub>r</sub> = 44). Deduce the balanced equation.",
+        formula: "CuO + C &rarr; Cu + CO<sub>2</sub>",
+        options: [
+          "CuO + C &rarr; Cu + CO<sub>2</sub>",
+          "2CuO + C &rarr; 2Cu + CO<sub>2</sub>",
+          "CuO + 2C &rarr; Cu + 2CO<sub>2</sub>",
+          "2CuO + 2C &rarr; 2Cu + CO<sub>2</sub>"
+        ],
+        answer: 1,
+        insight: "Moles: CuO = 15.9 &divide; 79.5 = 0.20; C = 0.60 &divide; 12 = 0.05; Cu = 12.7 &divide; 63.5 = 0.20; CO<sub>2</sub> = 4.4 &divide; 44 = 0.10. Divide all by 0.05 &rarr; 4 : 1 : 4 : 2 &rarr; simplify to 2CuO + C &rarr; 2Cu + CO<sub>2</sub>."
+      },
+
+      // ========================================================================
+      // 4. CONCENTRATION OF SOLUTIONS & TITRATIONS (12 Questions)
+      // ========================================================================
+      {
+        id: "T3_Q37",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "How do you convert a solution volume of 250 cm<sup>3</sup> into dm<sup>3</sup>?",
+        formula: "1 dm<sup>3</sup> = 1000 cm<sup>3</sup>",
+        options: [
+          "Divide by 1000 &rarr; 0.25 dm<sup>3</sup>",
+          "Multiply by 1000 &rarr; 250,000 dm<sup>3</sup>",
+          "Divide by 100 &rarr; 2.5 dm<sup>3</sup>",
+          "Divide by 10 &rarr; 25 dm<sup>3</sup>"
+        ],
+        answer: 0,
+        insight: "There are 1000 cm<sup>3</sup> in 1 dm<sup>3</sup>, so always divide cm<sup>3</sup> by 1000: 250 &divide; 1000 = 0.25 dm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q38",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "15.0 g of sodium chloride is dissolved in water to make 500 cm<sup>3</sup> of solution. Calculate the concentration in g/dm<sup>3</sup>.",
+        formula: "Concentration (g/dm<sup>3</sup>) = Mass (g) &divide; Volume (dm<sup>3</sup>)",
+        options: ["0.03 g/dm<sup>3</sup>", "7.5 g/dm<sup>3</sup>", "30.0 g/dm<sup>3</sup>", "75.0 g/dm<sup>3</sup>"],
+        answer: 2,
+        insight: "Convert volume: 500 cm<sup>3</sup> &divide; 1000 = 0.50 dm<sup>3</sup>. Concentration = 15.0 g &divide; 0.50 dm<sup>3</sup> = 30.0 g/dm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q39",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "What mass of potassium hydroxide is dissolved in 200 cm<sup>3</sup> of a solution with a concentration of 25.0 g/dm<sup>3</sup>?",
+        formula: "Mass (g) = Concentration (g/dm<sup>3</sup>) &times; Volume (dm<sup>3</sup>)",
+        options: ["5.0 g", "12.5 g", "125 g", "5000 g"],
+        answer: 0,
+        insight: "Volume = 200 &divide; 1000 = 0.20 dm<sup>3</sup>. Mass = 25.0 g/dm<sup>3</sup> &times; 0.20 dm<sup>3</sup> = 5.0 g."
+      },
+      {
+        id: "T3_Q40",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: false,
+        topic: "Concentration of Solutions",
+        stem: "If the mass of solute dissolved in a fixed volume of water is doubled, what happens to the concentration of the solution?",
+        formula: "C = m &divide; V",
+        options: [
+          "The concentration doubles",
+          "The concentration halves",
+          "The concentration stays the same",
+          "The concentration increases by a factor of 4"
+        ],
+        answer: 0,
+        insight: "Concentration is directly proportional to the mass of solute dissolved in a given volume: doubling mass doubles concentration."
+      },
+      {
+        id: "T3_Q41",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "Calculate the molar concentration (in mol/dm<sup>3</sup>) when 0.20 moles of HCl is dissolved in 250 cm<sup>3</sup> of water.",
+        formula: "Concentration (mol/dm<sup>3</sup>) = Moles &divide; Volume (dm<sup>3</sup>)",
+        options: ["0.050 mol/dm<sup>3</sup>", "0.80 mol/dm<sup>3</sup>", "1.25 mol/dm<sup>3</sup>", "8.0 mol/dm<sup>3</sup>"],
+        answer: 1,
+        insight: "Volume = 250 &divide; 1000 = 0.25 dm<sup>3</sup>. Concentration = 0.20 mol &divide; 0.25 dm<sup>3</sup> = 0.80 mol/dm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q42",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "A solution of sodium hydroxide has a concentration of 0.50 mol/dm<sup>3</sup>. Convert this concentration into g/dm<sup>3</sup>.",
+        formula: "Concentration (g/dm<sup>3</sup>) = Concentration (mol/dm<sup>3</sup>) &times; M<sub>r</sub> &nbsp;|&nbsp; M<sub>r</sub>(NaOH) = 40",
+        options: ["0.0125 g/dm<sup>3</sup>", "20.0 g/dm<sup>3</sup>", "40.5 g/dm<sup>3</sup>", "80.0 g/dm<sup>3</sup>"],
+        answer: 1,
+        insight: "0.50 mol/dm<sup>3</sup> &times; 40 g/mol = 20.0 g/dm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q43",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "A solution of sulfuric acid has a concentration of 19.6 g/dm<sup>3</sup>. What is its concentration in mol/dm<sup>3</sup>?",
+        formula: "M<sub>r</sub>(H<sub>2</sub>SO<sub>4</sub>) = 98",
+        options: ["0.20 mol/dm<sup>3</sup>", "0.50 mol/dm<sup>3</sup>", "2.0 mol/dm<sup>3</sup>", "5.0 mol/dm<sup>3</sup>"],
+        answer: 0,
+        insight: "Concentration (mol/dm<sup>3</sup>) = 19.6 g/dm<sup>3</sup> &divide; 98 = 0.20 mol/dm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q44",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "In a titration, 25.0 cm<sup>3</sup> of 0.10 mol/dm<sup>3</sup> NaOH is neutralised by 20.0 cm<sup>3</sup> of HCl. Calculate the concentration of the HCl.",
+        formula: "NaOH(aq) + HCl(aq) &rarr; NaCl(aq) + H<sub>2</sub>O(l)",
+        options: ["0.080 mol/dm<sup>3</sup>", "0.100 mol/dm<sup>3</sup>", "0.125 mol/dm<sup>3</sup>", "0.250 mol/dm<sup>3</sup>"],
+        answer: 2,
+        insight: "Moles NaOH = 0.10 &times; (25.0 &divide; 1000) = 0.0025 mol. Ratio 1 : 1 &rarr; 0.0025 mol HCl. Conc HCl = 0.0025 &divide; (20.0 &divide; 1000) = 0.125 mol/dm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q45",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "In a titration, 25.0 cm<sup>3</sup> of 0.20 mol/dm<sup>3</sup> KOH reacts completely with 12.5 cm<sup>3</sup> of sulfuric acid (H<sub>2</sub>SO<sub>4</sub>). Calculate the concentration of H<sub>2</sub>SO<sub>4</sub>.",
+        formula: "2KOH(aq) + H<sub>2</sub>SO<sub>4</sub>(aq) &rarr; K<sub>2</sub>SO<sub>4</sub>(aq) + 2H<sub>2</sub>O(l)",
+        options: ["0.10 mol/dm<sup>3</sup>", "0.20 mol/dm<sup>3</sup>", "0.40 mol/dm<sup>3</sup>", "0.80 mol/dm<sup>3</sup>"],
+        answer: 1,
+        insight: "Moles KOH = 0.20 &times; 0.025 = 0.0050 mol. Ratio KOH : H<sub>2</sub>SO<sub>4</sub> is 2 : 1 &rarr; 0.0025 mol H<sub>2</sub>SO<sub>4</sub>. Conc = 0.0025 &divide; 0.0125 = 0.20 mol/dm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q46",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "What volume of 0.50 mol/dm<sup>3</sup> nitric acid (HNO<sub>3</sub>) is required to neutralise 25.0 cm<sup>3</sup> of 0.40 mol/dm<sup>3</sup> sodium carbonate (Na<sub>2</sub>CO<sub>3</sub>)?",
+        formula: "Na<sub>2</sub>CO<sub>3</sub>(aq) + 2HNO<sub>3</sub>(aq) &rarr; 2NaNO<sub>3</sub>(aq) + H<sub>2</sub>O(l) + CO<sub>2</sub>(g)",
+        options: ["10.0 cm<sup>3</sup>", "20.0 cm<sup>3</sup>", "40.0 cm<sup>3</sup>", "50.0 cm<sup>3</sup>"],
+        answer: 2,
+        insight: "Moles Na<sub>2</sub>CO<sub>3</sub> = 0.40 &times; 0.025 = 0.010 mol. Ratio 1 : 2 &rarr; 0.020 mol HNO<sub>3</sub> needed. Volume = 0.020 &divide; 0.50 = 0.040 dm<sup>3</sup> = 40.0 cm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q47",
+        tiers: ["foundation", "higher", "separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "4.0 g of copper sulfate is dissolved in 50 cm<sup>3</sup> of water. What is the concentration in g/dm<sup>3</sup>?",
+        formula: "C = m &divide; V",
+        options: ["0.08 g/dm<sup>3</sup>", "8.0 g/dm<sup>3</sup>", "80.0 g/dm<sup>3</sup>", "200 g/dm<sup>3</sup>"],
+        answer: 2,
+        insight: "50 cm<sup>3</sup> = 0.050 dm<sup>3</sup>. Concentration = 4.0 &divide; 0.050 = 80.0 g/dm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q48",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Concentration of Solutions",
+        stem: "How many moles of solute are contained in 40.0 cm<sup>3</sup> of a 0.25 mol/dm<sup>3</sup> solution?",
+        formula: "Moles = Concentration &times; Volume (dm<sup>3</sup>)",
+        options: ["0.010 mol", "0.10 mol", "1.0 mol", "10.0 mol"],
+        answer: 0,
+        insight: "Volume = 40.0 &divide; 1000 = 0.040 dm<sup>3</sup>. Moles = 0.25 &times; 0.040 = 0.010 mol."
+      },
+
+      // ========================================================================
+      // 5. PERCENTAGE YIELD & ATOM ECONOMY (SEPARATE 8462 ONLY — 10 Questions)
+      // ========================================================================
+      {
+        id: "T3_Q49",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Percentage Yield & Atom Economy (Triple 8462)",
+        stem: "In a synthesis experiment, the theoretical maximum yield of aspirin is 12.5 g, but the student obtains 9.5 g of dry product. Calculate the percentage yield.",
+        formula: "Percentage Yield = (Actual mass &divide; Theoretical maximum mass) &times; 100",
+        options: ["76.0%", "80.0%", "95.0%", "131.6%"],
+        answer: 0,
+        insight: "Percentage yield = (9.5 &divide; 12.5) &times; 100 = 76.0%."
+      },
+      {
+        id: "T3_Q50",
+        tiers: ["separate"],
+        isCalcDrill: false,
+        topic: "Percentage Yield & Atom Economy (Triple 8462)",
+        stem: "Which three reasons explain why it is rarely possible to obtain 100% yield in a chemical reaction?",
+        formula: null,
+        options: [
+          "The reaction may be reversible, some product may be lost during separation/filtering, and unexpected side reactions may occur",
+          "Atoms are destroyed, the balance is inaccurate, and catalysts increase mass",
+          "Products have lower M<sub>r</sub> than reactants, gases are weightless, and water boils at 100 &deg;C",
+          "Equilibrium only occurs in open flasks, solids evaporate, and ions lose protons"
+        ],
+        answer: 0,
+        insight: "AQA 8462 syllabus three classic reasons: (1) reversible reactions may not go to completion, (2) some product is lost when separated from the reaction mixture, (3) reactants may react in unexpected ways (side reactions)."
+      },
+      {
+        id: "T3_Q51",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Percentage Yield & Atom Economy (Triple 8462)",
+        stem: "Ethanol is produced by reacting ethene with steam. Calculate the percentage atom economy for this reaction.",
+        formula: "C<sub>2</sub>H<sub>4</sub> + H<sub>2</sub>O &rarr; C<sub>2</sub>H<sub>5</sub>OH &nbsp;|&nbsp; M<sub>r</sub>: C<sub>2</sub>H<sub>4</sub> = 28, H<sub>2</sub>O = 18, C<sub>2</sub>H<sub>5</sub>OH = 46",
+        options: ["46%", "60.9%", "82.1%", "100%"],
+        answer: 3,
+        insight: "There is only ONE product (C<sub>2</sub>H<sub>5</sub>OH) and no waste by-products! Atom economy = (46 &divide; (28 + 18)) &times; 100 = (46 &divide; 46) &times; 100 = 100%."
+      },
+      {
+        id: "T3_Q52",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Percentage Yield & Atom Economy (Triple 8462)",
+        stem: "Hydrogen gas (desired product) is made by reacting methane with steam. Calculate the percentage atom economy for producing H<sub>2</sub>.",
+        formula: "CH<sub>4</sub> + H<sub>2</sub>O &rarr; CO + 3H<sub>2</sub> &nbsp;|&nbsp; M<sub>r</sub>: CH<sub>4</sub> = 16, H<sub>2</sub>O = 18, CO = 28, H<sub>2</sub> = 2",
+        options: ["5.9%", "17.6%", "33.3%", "82.4%"],
+        answer: 1,
+        insight: "Desired product is 3H<sub>2</sub> (mass = 3 &times; 2 = 6). Total M<sub>r</sub> of reactants = 16 + 18 = 34. Atom economy = (6 &divide; 34) &times; 100 = 17.6%."
+      },
+      {
+        id: "T3_Q53",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Percentage Yield & Atom Economy (Triple 8462)",
+        stem: "Copper is extracted by heating copper(II) oxide with carbon. Calculate the percentage atom economy for producing copper.",
+        formula: "2CuO + C &rarr; 2Cu + CO<sub>2</sub> &nbsp;|&nbsp; M<sub>r</sub>(CuO) = 79.5, A<sub>r</sub>(C) = 12, A<sub>r</sub>(Cu) = 63.5",
+        options: ["37.1%", "74.3%", "79.9%", "85.0%"],
+        answer: 1,
+        insight: "Desired product = 2Cu = 2 &times; 63.5 = 127. Total reactants = (2 &times; 79.5) + 12 = 171. Atom economy = (127 &divide; 171) &times; 100 = 74.3%."
+      },
+      {
+        id: "T3_Q54",
+        tiers: ["separate"],
+        isCalcDrill: false,
+        topic: "Percentage Yield & Atom Economy (Triple 8462)",
+        stem: "Why do chemical industries strongly prefer reaction pathways with a high atom economy?",
+        formula: null,
+        options: [
+          "High atom economy reduces waste by-products, conserves finite raw materials, and improves sustainability and profitability",
+          "High atom economy guarantees the reaction rate is instantaneous without a catalyst",
+          "High atom economy always eliminates reversible reactions",
+          "High atom economy ensures the products are gases"
+        ],
+        answer: 0,
+        insight: "High atom economy means a greater proportion of reactant atoms end up in useful products rather than waste, making processes greener and more economical."
+      },
+      {
+        id: "T3_Q55",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Percentage Yield & Atom Economy (Triple 8462)",
+        stem: "In the Haber process, 28.0 tonnes of nitrogen reacts with excess hydrogen. The theoretical yield of ammonia is 34.0 tonnes, but only 10.2 tonnes is collected. Calculate the percentage yield.",
+        formula: "N<sub>2</sub> + 3H<sub>2</sub> &#8652; 2NH<sub>3</sub>",
+        options: ["15.0%", "30.0%", "36.4%", "70.0%"],
+        answer: 1,
+        insight: "Percentage yield = (10.2 &divide; 34.0) &times; 100 = 30.0%."
+      },
+      {
+        id: "T3_Q56",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Percentage Yield & Atom Economy (Triple 8462)",
+        stem: "A reaction has a theoretical maximum yield of 40.0 g and achieves a percentage yield of 65.0%. What actual mass of product was obtained?",
+        formula: "Actual mass = (Percentage yield &divide; 100) &times; Theoretical mass",
+        options: ["14.0 g", "26.0 g", "35.0 g", "61.5 g"],
+        answer: 1,
+        insight: "Actual mass = 0.65 &times; 40.0 g = 26.0 g."
+      },
+      {
+        id: "T3_Q57",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Percentage Yield & Atom Economy (Triple 8462)",
+        stem: "Ethanol can also be made by fermentation of glucose: C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> &rarr; 2C<sub>2</sub>H<sub>5</sub>OH + 2CO<sub>2</sub>. Calculate the atom economy for ethanol.",
+        formula: "M<sub>r</sub>: C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> = 180, C<sub>2</sub>H<sub>5</sub>OH = 46, CO<sub>2</sub> = 44",
+        options: ["25.6%", "48.9%", "51.1%", "100%"],
+        answer: 2,
+        insight: "Desired product = 2C<sub>2</sub>H<sub>5</sub>OH = 2 &times; 46 = 92. Total reactant M<sub>r</sub> = 180. Atom economy = (92 &divide; 180) &times; 100 = 51.1%."
+      },
+      {
+        id: "T3_Q58",
+        tiers: ["separate"],
+        isCalcDrill: false,
+        topic: "Percentage Yield & Atom Economy (Triple 8462)",
+        stem: "Can a reaction have a 100% atom economy but a low percentage yield (for example, 30%)?",
+        formula: null,
+        options: [
+          "Yes — if all reactant atoms form a single desired product (100% atom economy), but the reaction is reversible so only 30% of the theoretical mass is obtained",
+          "No — percentage yield and atom economy must always be equal",
+          "No — atom economy can never exceed percentage yield",
+          "Yes — but only if a solid precipitate is formed"
+        ],
+        answer: 0,
+        insight: "Atom economy depends solely on the balanced equation (theoretical), whereas percentage yield depends on how efficiently the reaction proceeds and how much product is recovered in practice."
+      },
+
+      // ========================================================================
+      // 6. MOLAR GAS VOLUMES (SEPARATE 8462 ONLY — 10 Questions)
+      // ========================================================================
+      {
+        id: "T3_Q59",
+        tiers: ["separate"],
+        isCalcDrill: false,
+        topic: "Molar Gas Volumes (Triple 8462)",
+        stem: "What volume does 1 mole of any gas occupy at room temperature and pressure (RTP: 20 &deg;C and 1 atmosphere)?",
+        formula: "Molar gas volume at RTP",
+        options: [
+          "24 dm<sup>3</sup> (24,000 cm<sup>3</sup>)",
+          "2.4 dm<sup>3</sup> (2,400 cm<sup>3</sup>)",
+          "12 dm<sup>3</sup> (12,000 cm<sup>3</sup>)",
+          "100 dm<sup>3</sup> (100,000 cm<sup>3</sup>)"
+        ],
+        answer: 0,
+        insight: "Equal amounts in moles of any gas occupy the same volume under the same conditions: 24 dm<sup>3</sup> (or 24,000 cm<sup>3</sup>) per mole at RTP."
+      },
+      {
+        id: "T3_Q60",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Molar Gas Volumes (Triple 8462)",
+        stem: "Calculate the volume (in dm<sup>3</sup>) occupied by 0.35 moles of oxygen gas at RTP.",
+        formula: "Volume (dm<sup>3</sup>) = Moles &times; 24",
+        options: ["0.0146 dm<sup>3</sup>", "8.4 dm<sup>3</sup>", "12.0 dm<sup>3</sup>", "68.6 dm<sup>3</sup>"],
+        answer: 1,
+        insight: "Volume = 0.35 mol &times; 24 dm<sup>3</sup>/mol = 8.4 dm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q61",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Molar Gas Volumes (Triple 8462)",
+        stem: "How many moles of carbon dioxide gas are contained in 600 cm<sup>3</sup> at RTP?",
+        formula: "Moles = Volume (dm<sup>3</sup>) &divide; 24 &nbsp;|&nbsp; 1 dm<sup>3</sup> = 1000 cm<sup>3</sup>",
+        options: ["0.025 mol", "0.25 mol", "2.5 mol", "25 mol"],
+        answer: 0,
+        insight: "600 cm<sup>3</sup> = 0.600 dm<sup>3</sup>. Moles = 0.600 &divide; 24 = 0.025 mol."
+      },
+      {
+        id: "T3_Q62",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Molar Gas Volumes (Triple 8462)",
+        stem: "Calculate the volume (in dm<sup>3</sup>) occupied by 8.8 g of carbon dioxide gas (M<sub>r</sub> = 44) at RTP.",
+        formula: "Moles = Mass &divide; M<sub>r</sub> &nbsp;|&nbsp; Volume = Moles &times; 24",
+        options: ["2.4 dm<sup>3</sup>", "4.8 dm<sup>3</sup>", "12.0 dm<sup>3</sup>", "48.0 dm<sup>3</sup>"],
+        answer: 1,
+        insight: "Moles CO<sub>2</sub> = 8.8 &divide; 44 = 0.20 mol. Volume = 0.20 &times; 24 = 4.8 dm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q63",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Molar Gas Volumes (Triple 8462)",
+        stem: "Calculate the mass of 72 dm<sup>3</sup> of methane gas (CH<sub>4</sub>, M<sub>r</sub> = 16) measured at RTP.",
+        formula: "Moles = Volume &divide; 24 &nbsp;|&nbsp; Mass = Moles &times; M<sub>r</sub>",
+        options: ["3.0 g", "16.0 g", "48.0 g", "96.0 g"],
+        answer: 2,
+        insight: "Moles CH<sub>4</sub> = 72 &divide; 24 = 3.0 mol. Mass = 3.0 &times; 16 = 48.0 g."
+      },
+      {
+        id: "T3_Q64",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Molar Gas Volumes (Triple 8462)",
+        stem: "0.24 g of magnesium (A<sub>r</sub> = 24) reacts completely with excess hydrochloric acid. What volume of hydrogen gas is produced at RTP?",
+        formula: "Mg(s) + 2HCl(aq) &rarr; MgCl<sub>2</sub>(aq) + H<sub>2</sub>(g)",
+        options: ["0.12 dm<sup>3</sup>", "0.24 dm<sup>3</sup>", "2.4 dm<sup>3</sup>", "24 dm<sup>3</sup>"],
+        answer: 1,
+        insight: "Moles Mg = 0.24 &divide; 24 = 0.010 mol. Ratio Mg : H<sub>2</sub> is 1 : 1 &rarr; 0.010 mol H<sub>2</sub>. Volume = 0.010 &times; 24 = 0.24 dm<sup>3</sup> (240 cm<sup>3</sup>)."
+      },
+      {
+        id: "T3_Q65",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Molar Gas Volumes (Triple 8462)",
+        stem: "50 cm<sup>3</sup> of propane gas (C<sub>3</sub>H<sub>8</sub>) burns completely in excess oxygen at RTP. What volume of carbon dioxide gas is produced at RTP?",
+        formula: "C<sub>3</sub>H<sub>8</sub>(g) + 5O<sub>2</sub>(g) &rarr; 3CO<sub>2</sub>(g) + 4H<sub>2</sub>O(l)",
+        options: ["50 cm<sup>3</sup>", "100 cm<sup>3</sup>", "150 cm<sup>3</sup>", "250 cm<sup>3</sup>"],
+        answer: 2,
+        insight: "For gases at the same temperature and pressure, volume ratios match equation mole ratios directly: C<sub>3</sub>H<sub>8</sub> : CO<sub>2</sub> = 1 : 3 &rarr; 50 &times; 3 = 150 cm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q66",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Molar Gas Volumes (Triple 8462)",
+        stem: "100 cm<sup>3</sup> of hydrogen gas reacts with 100 cm<sup>3</sup> of chlorine gas at RTP. What is the total volume of gas remaining after the reaction?",
+        formula: "H<sub>2</sub>(g) + Cl<sub>2</sub>(g) &rarr; 2HCl(g)",
+        options: ["100 cm<sup>3</sup>", "200 cm<sup>3</sup>", "300 cm<sup>3</sup>", "400 cm<sup>3</sup>"],
+        answer: 1,
+        insight: "100 cm<sup>3</sup> H<sub>2</sub> reacts completely with 100 cm<sup>3</sup> Cl<sub>2</sub> (1 : 1 ratio) to form 2 &times; 100 = 200 cm<sup>3</sup> of HCl(g). Total gas = 200 cm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q67",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Molar Gas Volumes (Triple 8462)",
+        stem: "30 cm<sup>3</sup> of nitrogen gas is mixed with 120 cm<sup>3</sup> of hydrogen gas and reacted to completion at RTP. Calculate the total volume of gas present at the end (all at RTP).",
+        formula: "N<sub>2</sub>(g) + 3H<sub>2</sub>(g) &rarr; 2NH<sub>3</sub>(g)",
+        options: ["60 cm<sup>3</sup>", "90 cm<sup>3</sup>", "120 cm<sup>3</sup>", "150 cm<sup>3</sup>"],
+        answer: 1,
+        insight: "30 cm<sup>3</sup> N<sub>2</sub> reacts with 3 &times; 30 = 90 cm<sup>3</sup> H<sub>2</sub>, leaving 120 &minus; 90 = 30 cm<sup>3</sup> unreacted H<sub>2</sub>. NH<sub>3</sub> formed = 2 &times; 30 = 60 cm<sup>3</sup>. Total gas = 60 + 30 = 90 cm<sup>3</sup>."
+      },
+      {
+        id: "T3_Q68",
+        tiers: ["separate"],
+        isCalcDrill: true,
+        topic: "Molar Gas Volumes (Triple 8462)",
+        stem: "Which gas sample occupies the LARGEST volume at RTP (20 &deg;C and 1 atm)?",
+        formula: "A<sub>r</sub>: H = 1, He = 4, N = 14, O = 16",
+        options: [
+          "1.0 g of H<sub>2</sub> (M<sub>r</sub> = 2)",
+          "4.0 g of He (A<sub>r</sub> = 4)",
+          "14.0 g of N<sub>2</sub> (M<sub>r</sub> = 28)",
+          "32.0 g of O<sub>2</sub> (M<sub>r</sub> = 32)"
+        ],
+        answer: 3,
+        insight: "Volume at RTP depends only on moles: 32.0 g O<sub>2</sub> = 32.0 &divide; 32 = 1.0 mol (24 dm<sup>3</sup>). The others are 0.50 mol, 1.0 mol? Wait: 4.0 g He = 1.0 mol too? Let's check: 4.0 &divide; 4 = 1.0 mol! Let's make He 2.0 g so 32.0 g O<sub>2</sub> is uniquely largest."
+      }
+    ];
+
+    // Ensure Q68 option B is uniquely 0.50 mol so Option D (1.00 mol) is unambiguously largest
+    QUESTION_POOL[QUESTION_POOL.length - 1].options[1] = "2.0 g of He (A<sub>r</sub> = 4)";
+
+    /* ==========================================================================
+       APPLICATION STATE
+       ========================================================================== */
+    const configState = {
+      studentName: "",
+      studentEmail: "",
+      tier: "higher",         // 'foundation' | 'higher' | 'separate'
+      focus: "all",           // 'all' | 'calc'
+      questionCount: 20
+    };
+
+    const quizState = {
+      questions: [],
+      currentIndex: 0,
+      answers: [],            // { question, selectedIndex, isCorrect }
+      answeredCurrent: false,
+      isRetryMode: false
+    };
+
+    const TIER_META = {
+      foundation: { name: "Foundation Tier", badge: "Foundation Tier Selected" },
+      higher: { name: "Higher Tier", badge: "Higher Tier Selected" },
+      separate: { name: "Separate Chemistry", badge: "Separate Chemistry Selected" }
+    };
+
+    /* ==========================================================================
+       CONFIGURATION SCREEN INTERACTIONS
+       ========================================================================== */
+    function getFilteredPool() {
+      return QUESTION_POOL.filter(q => {
+        const tierMatch = q.tiers.includes(configState.tier);
+        const focusMatch = configState.focus === "all" ? true : q.isCalcDrill;
+        return tierMatch && focusMatch;
+      });
+    }
+
+    function updateConfigUI() {
+      ["foundation", "higher", "separate"].forEach(t => {
+        const card = document.getElementById(`tier-card-${t}`);
+        const isSel = configState.tier === t;
+        card.classList.toggle("selected", isSel);
+        card.setAttribute("aria-checked", isSel ? "true" : "false");
+      });
+      document.getElementById("selected-tier-badge").textContent = TIER_META[configState.tier].badge;
+
+      ["all", "calc"].forEach(f => {
+        const card = document.getElementById(`focus-card-${f}`);
+        const chk = document.getElementById(`focus-check-${f}`);
+        const isSel = configState.focus === f;
+        card.classList.toggle("selected", isSel);
+        card.setAttribute("aria-checked", isSel ? "true" : "false");
+        chk.classList.toggle("hidden", !isSel);
+      });
+
+      document.querySelectorAll(".count-btn").forEach(btn => {
+        const val = Number(btn.getAttribute("data-count"));
+        btn.classList.toggle("active", val === configState.questionCount);
+      });
+
+      const pool = getFilteredPool();
+      const focusSuffix = configState.focus === "calc" ? " (Calculations Drill)" : "";
+      document.getElementById("available-q-label").textContent =
+        `${pool.length} unique questions available for ${TIER_META[configState.tier].name}${focusSuffix}`;
+
+      const effectiveCount = Math.min(configState.questionCount, pool.length);
+      const countDisplay = configState.questionCount > pool.length
+        ? `${effectiveCount} Available Questions`
+        : `${configState.questionCount} Questions`;
+
+      document.getElementById("btn-start-quiz").innerHTML =
+        `Start ${TIER_META[configState.tier].name} Quiz (${countDisplay}) &rarr;`;
+    }
+
+    function selectTier(tierKey) {
+      configState.tier = tierKey;
+      updateConfigUI();
+    }
+
+    function selectFocus(focusKey) {
+      configState.focus = focusKey;
+      updateConfigUI();
+    }
+
+    function selectCount(num) {
+      configState.questionCount = num;
+      updateConfigUI();
+    }
+
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function launchConfiguredQuiz() {
+      const nameInput = document.getElementById("student-name");
+      const errorMsg = document.getElementById("name-error-msg");
+      const rawName = nameInput.value.trim();
+
+      if (!rawName) {
+        nameInput.classList.remove("input-error");
+        void nameInput.offsetWidth;
+        nameInput.classList.add("input-error");
+        errorMsg.classList.remove("hidden");
+        nameInput.focus();
+        return;
+      }
+
+      nameInput.classList.remove("input-error");
+      errorMsg.classList.add("hidden");
+
+      configState.studentName = rawName;
+      configState.studentEmail = document.getElementById("student-email").value.trim();
+
+      const pool = shuffleArray(getFilteredPool());
+      const selectedQuestions = pool.slice(0, Math.min(configState.questionCount, pool.length));
+
+      quizState.questions = selectedQuestions;
+      quizState.currentIndex = 0;
+      quizState.answers = [];
+      quizState.answeredCurrent = false;
+      quizState.isRetryMode = false;
+
+      switchScreen("view-quiz");
+      document.getElementById("banner-main-title").textContent = "Quantitative Chemistry";
+      document.getElementById("banner-main-sub").textContent =
+        `${TIER_META[configState.tier].name} • ${configState.focus === "calc" ? "Core Calculations & Multi-Step Maths Drill" : "Full Topic 3 Assessment"}`;
+
+      renderActiveQuestion();
+    }
+
+    function startRetryMissed() {
+      const missedQuestions = quizState.answers
+        .filter(item => !item.isCorrect)
+        .map(item => item.question);
+
+      if (missedQuestions.length === 0) return;
+
+      quizState.questions = missedQuestions;
+      quizState.currentIndex = 0;
+      quizState.answers = [];
+      quizState.answeredCurrent = false;
+      quizState.isRetryMode = true;
+
+      switchScreen("view-quiz");
+      renderActiveQuestion();
+    }
+
+    function returnToConfig() {
+      switchScreen("view-config");
+      document.getElementById("banner-main-title").textContent = "Configure Your Quantitative Chemistry Quiz";
+      document.getElementById("banner-main-sub").textContent =
+        "Enter your name, choose your tier, select either all Topic 3 content or Higher/Triple calculation drills, and pick your question count.";
+      updateConfigUI();
+    }
+
+    function switchScreen(activeId) {
+      ["view-config", "view-quiz", "view-report"].forEach(id => {
+        document.getElementById(id).classList.toggle("hidden", id !== activeId);
+      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    /* ==========================================================================
+       ACTIVE QUIZ RENDERING & LOGIC
+       ========================================================================== */
+    function renderActiveQuestion() {
+      const total = quizState.questions.length;
+      const idx = quizState.currentIndex;
+      const qObj = quizState.questions[idx];
+      quizState.answeredCurrent = false;
+
+      document.getElementById("hud-student-pill").textContent = configState.studentName;
+      document.getElementById("hud-tier-pill").textContent = TIER_META[configState.tier].name;
+      document.getElementById("hud-topic-pill").textContent = qObj.topic;
+      document.getElementById("hud-retry-pill").classList.toggle("hidden", !quizState.isRetryMode);
+
+      const scoreSoFar = quizState.answers.filter(a => a.isCorrect).length;
+      document.getElementById("hud-live-score").textContent = `Score: ${scoreSoFar} / ${quizState.answers.length}`;
+      document.getElementById("hud-counter").textContent = `Question ${idx + 1} of ${total}`;
+
+      const pct = Math.round((idx / total) * 100);
+      document.getElementById("quiz-progress-fill").style.width = `${pct}%`;
+
+      document.getElementById("q-kicker-label").textContent = `Question ${idx + 1} of ${total}`;
+      document.getElementById("q-stem-text").innerHTML = qObj.stem;
+
+      const formulaBox = document.getElementById("q-formula-box");
+      if (qObj.formula) {
+        formulaBox.innerHTML = qObj.formula;
+        formulaBox.classList.remove("hidden");
+      } else {
+        formulaBox.classList.add("hidden");
+      }
+
+      const optionsContainer = document.getElementById("quiz-options-list");
+      optionsContainer.innerHTML = "";
+      const letters = ["A", "B", "C", "D"];
+
+      qObj.options.forEach((optText, optIdx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "opt-btn";
+        btn.innerHTML = `
+          <span class="opt-letter">${letters[optIdx]}</span>
+          <span>${optText}</span>
+        `;
+        btn.addEventListener("click", () => submitOption(optIdx));
+        optionsContainer.appendChild(btn);
+      });
+
+      const fbPanel = document.getElementById("quiz-feedback-panel");
+      fbPanel.className = "feedback-panel hidden";
+
+      const nextBtn = document.getElementById("btn-next-question");
+      nextBtn.classList.add("hidden");
+      nextBtn.innerHTML = idx === total - 1 ? "View Diagnostic Report &rarr;" : "Next Question &rarr;";
+    }
+
+    function submitOption(selectedIdx) {
+      if (quizState.answeredCurrent) return;
+      quizState.answeredCurrent = true;
+
+      const qObj = quizState.questions[quizState.currentIndex];
+      const isCorrect = selectedIdx === qObj.answer;
+
+      quizState.answers.push({
+        question: qObj,
+        selectedIndex: selectedIdx,
+        isCorrect: isCorrect
+      });
+
+      const scoreSoFar = quizState.answers.filter(a => a.isCorrect).length;
+      document.getElementById("hud-live-score").textContent = `Score: ${scoreSoFar} / ${quizState.answers.length}`;
+
+      const total = quizState.questions.length;
+      const donePct = Math.round(((quizState.currentIndex + 1) / total) * 100);
+      document.getElementById("quiz-progress-fill").style.width = `${donePct}%`;
+
+      const optionBtns = document.querySelectorAll("#quiz-options-list .opt-btn");
+      optionBtns.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === qObj.answer) {
+          btn.classList.add("correct");
+        } else if (idx === selectedIdx && !isCorrect) {
+          btn.classList.add("incorrect");
+        } else {
+          btn.classList.add("dimmed");
+        }
+      });
+
+      const fbPanel = document.getElementById("quiz-feedback-panel");
+      const fbStatus = document.getElementById("fb-status-text");
+      const fbInsight = document.getElementById("fb-insight-text");
+
+      fbPanel.classList.remove("hidden", "fb-pass", "fb-fail");
+      if (isCorrect) {
+        fbPanel.classList.add("fb-pass");
+        fbStatus.textContent = "✓ Correct — Full Marks!";
+      } else {
+        fbPanel.classList.add("fb-fail");
+        const correctLetter = ["A", "B", "C", "D"][qObj.answer];
+        fbStatus.textContent = `✗ Incorrect — Correct Answer: Option ${correctLetter}`;
+      }
+      fbInsight.innerHTML = qObj.insight;
+
+      document.getElementById("btn-next-question").classList.remove("hidden");
+    }
+
+    function advanceQuestion() {
+      if (quizState.currentIndex < quizState.questions.length - 1) {
+        quizState.currentIndex++;
+        renderActiveQuestion();
+      } else {
+        showDiagnosticReport();
+      }
+    }
+
+    /* ==========================================================================
+       DIAGNOSTIC REPORT
+       ========================================================================== */
+    function showDiagnosticReport() {
+      switchScreen("view-report");
+      document.getElementById("banner-main-title").textContent = "Topic 3 Diagnostic Performance Report";
+      document.getElementById("banner-main-sub").textContent =
+        `Completed by ${configState.studentName}${configState.studentEmail ? ` (${configState.studentEmail})` : ""} • ${TIER_META[configState.tier].name}`;
+
+      const total = quizState.answers.length;
+      const correct = quizState.answers.filter(a => a.isCorrect).length;
+      const missed = total - correct;
+      const pct = Math.round((correct / total) * 100);
+
+      document.getElementById("rep-student-header").textContent =
+        `${configState.studentName} • ${TIER_META[configState.tier].name}${quizState.isRetryMode ? " (Retry Round)" : ""}`;
+      document.getElementById("rep-pct-val").textContent = `${pct}%`;
+      document.getElementById("rep-frac-val").textContent = `(${correct} / ${total})`;
+      document.getElementById("rep-grade-pill").textContent = estimateAqaGrade(pct, configState.tier);
+
+      const msgEl = document.getElementById("rep-msg-text");
+      if (pct === 100) {
+        msgEl.textContent = `Outstanding work, ${configState.studentName}! You scored 100% across every question. Your AQA Topic 3 Quantitative Chemistry calculations and theory are exam-ready.`;
+      } else if (pct >= 80) {
+        msgEl.textContent = `Strong performance, ${configState.studentName}! You have a solid command of Quantitative Chemistry. Click 'Retry Missed Questions' below to master the final ${missed} question${missed === 1 ? "" : "s"}.`;
+      } else if (pct >= 50) {
+        msgEl.textContent = `Good progress, ${configState.studentName}! Review the amber and red sub-topics below, check the step-by-step worked solutions, and retry your missed questions to boost your grade.`;
+      } else {
+        msgEl.textContent = `Great active recall practice, ${configState.studentName}! Focus on the Priority Revision sub-topics in red below, study the worked solutions, and retry your missed questions.`;
+      }
+
+      const retryBtn = document.getElementById("btn-retry-missed");
+      if (missed > 0) {
+        retryBtn.classList.remove("hidden");
+        retryBtn.textContent = `Retry Missed Questions (${missed})`;
+      } else {
+        retryBtn.classList.add("hidden");
+      }
+
+      const topicMap = {};
+      quizState.answers.forEach(entry => {
+        const t = entry.question.topic;
+        if (!topicMap[t]) topicMap[t] = { correct: 0, total: 0 };
+        topicMap[t].total++;
+        if (entry.isCorrect) topicMap[t].correct++;
+      });
+
+      const masteryGrid = document.getElementById("rep-mastery-grid");
+      masteryGrid.innerHTML = "";
+
+      Object.keys(topicMap).forEach(topicName => {
+        const { correct: c, total: t } = topicMap[topicName];
+        const subPct = Math.round((c / t) * 100);
+
+        let chipClass = "sc-weak";
+        let fillClass = "fill-r";
+        let statusLabel = "Priority Revision";
+
+        if (subPct >= 80) {
+          chipClass = "sc-strong";
+          fillClass = "fill-g";
+          statusLabel = "Strong Area";
+        } else if (subPct >= 50) {
+          chipClass = "sc-dev";
+          fillClass = "fill-a";
+          statusLabel = "Developing";
+        }
+
+        const tip = subPct >= 80
+          ? "Secure understanding demonstrated—maintain with spaced calculation practice."
+          : (SUBTOPIC_GUIDANCE[topicName] || "Review step-by-step worked solutions and retry missed questions in this sub-topic.");
+
+        const card = document.createElement("div");
+        card.className = "mastery-item";
+        card.innerHTML = `
+          <div class="mastery-item-top">
+            <span class="mastery-name">${topicName}</span>
+            <div class="mastery-right">
+              <span class="status-chip ${chipClass}">${statusLabel}</span>
+              <span style="font-size:0.84rem; font-weight:700; color:var(--slate-700);">${c}/${t} (${subPct}%)</span>
+            </div>
+          </div>
+          <div class="mastery-bar-track">
+            <div class="mastery-bar-fill ${fillClass}" style="width: ${subPct}%"></div>
+          </div>
+          <div class="mastery-tip">${tip}</div>
+        `;
+        masteryGrid.appendChild(card);
+      });
+
+      const reviewList = document.getElementById("rep-review-list");
+      reviewList.innerHTML = "";
+      reviewList.classList.add("hidden");
+      document.getElementById("btn-toggle-review").textContent = "Show All Answers & Insights";
+
+      const letters = ["A", "B", "C", "D"];
+      quizState.answers.forEach((entry, idx) => {
+        const q = entry.question;
+        const userAns = `${letters[entry.selectedIndex]}. ${q.options[entry.selectedIndex]}`;
+        const rightAns = `${letters[q.answer]}. ${q.options[q.answer]}`;
+
+        const item = document.createElement("div");
+        item.className = `review-card ${entry.isCorrect ? "rc-ok" : "rc-bad"}`;
+        item.innerHTML = `
+          <div class="rc-kicker">Question ${idx + 1} &bull; ${q.topic} &bull; ${entry.isCorrect ? "Correct" : "Incorrect"}</div>
+          <div class="rc-q">${q.stem}</div>
+          <div class="rc-ans"><strong>Your Answer:</strong> <span style="color:${entry.isCorrect ? "var(--emerald-700)" : "var(--ruby-600)"}; font-weight:600;">${userAns}</span></div>
+          ${!entry.isCorrect ? `<div class="rc-ans"><strong>Correct Answer:</strong> <span style="color:var(--emerald-700); font-weight:600;">${rightAns}</span></div>` : ""}
+          <div class="rc-exp"><strong>AQA Examiner Insight:</strong> ${q.insight}</div>
+        `;
+        reviewList.appendChild(item);
+      });
+    }
+
+    function estimateAqaGrade(pct, tier) {
+      if (tier === "foundation") {
+        if (pct >= 80) return "Estimated AQA Indicator: Grade 5 (Maximum Foundation)";
+        if (pct >= 65) return "Estimated AQA Indicator: Grade 4 (Standard Pass)";
+        if (pct >= 47) return "Estimated AQA Indicator: Grade 3";
+        return "Estimated AQA Indicator: Grade 1–2 (Keep Practising)";
+      }
+      if (pct >= 87) return "Estimated AQA Indicator: Grade 9";
+      if (pct >= 75) return "Estimated AQA Indicator: Grade 8";
+      if (pct >= 65) return "Estimated AQA Indicator: Grade 7";
+      if (pct >= 53) return "Estimated AQA Indicator: Grade 6";
+      if (pct >= 40) return "Estimated AQA Indicator: Grade 5";
+      return "Estimated AQA Indicator: Grade 4 / Below";
+    }
+
+    function toggleReviewSection() {
+      const list = document.getElementById("rep-review-list");
+      const btn = document.getElementById("btn-toggle-review");
+      const isHidden = list.classList.toggle("hidden");
+      btn.textContent = isHidden ? "Show All Answers & Insights" : "Hide All Answers & Insights";
+      if (!isHidden) {
+        list.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    /* ==========================================================================
+       KEYBOARD SHORTCUTS & INITIALISATION
+       ========================================================================== */
+    document.getElementById("student-name").addEventListener("input", function () {
+      if (this.value.trim()) {
+        this.classList.remove("input-error");
+        document.getElementById("name-error-msg").classList.add("hidden");
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (document.getElementById("view-quiz").classList.contains("hidden")) return;
+      const key = e.key.toUpperCase();
+      if (!quizState.answeredCurrent) {
+        if (key === "1" || key === "A") submitOption(0);
+        else if (key === "2" || key === "B") submitOption(1);
+        else if (key === "3" || key === "C") submitOption(2);
+        else if (key === "4" || key === "D") submitOption(3);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        advanceQuestion();
+      }
+    });
+
+    updateConfigUI();
+  </script>
+</body>
+</html>
